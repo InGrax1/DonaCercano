@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DonaCercano — Lo que ya no usas, alguien más necesita</title>
+  <meta name="description" content="Plataforma gratuita para donar y recibir ropa, muebles, alimentos y más entre vecinos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="10" fill="#E85D27"/>
+        <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+        <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Dona<span>Cercano</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="buscar.html">Explorar donaciones</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+    </ul>
+    <a href="donar.html" class="btn btn-primary nav-cta desktop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Publicar donación
+    </a>
+    <div id="nav-auth-desktop"></div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="buscar.html">Explorar donaciones</a>
+  <a href="#como-funciona">Cómo funciona</a>
+  <a href="donar.html" class="btn btn-primary">Publicar donación</a>
+  <div id="nav-auth-mobile"></div>
+</div>
+
+<!-- ── Hero ─────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        100% gratuito · Creá tu cuenta para gestionar tus donaciones
+      </div>
+      <h1 class="hero-title">
+        Lo que ya no usas,<br><em>alguien más necesita</em>
+      </h1>
+      <p class="hero-desc">
+        Conectamos donaciones de ropa, muebles, alimentos, libros y más
+        con familias y personas que los necesitan, de forma simple y cercana.
+      </p>
+      <div class="hero-actions">
+        <a href="buscar.html" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Ver donaciones disponibles
+        </a>
+        <a href="donar.html" class="btn btn-outline btn-lg">Quiero donar algo</a>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="hero-img-side">
+      <div class="hero-img-frame">
+        <img
+          src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=580&h=420&q=80"
+          alt="Voluntarios organizando donaciones comunitarias"
+          class="hero-main-img"
+          loading="eager"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <!-- Fallback si no carga la imagen -->
+        <div class="hero-img-fallback" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" width="72" height="72" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.7 4.5 7.7-4.5"/><path d="m7.5 4.27 9 5.15"/></svg>
+          <span style="font-size:.9rem;font-weight:600;color:var(--primary);">Donaciones en tu comunidad</span>
+        </div>
+
+        <!-- Badge flotante 1 -->
+        <div class="hero-float-badge hero-float-badge-1">
+          <div class="hero-float-dot" style="background:#22A864;"></div>
+          <span id="badge-disponibles-count">Donaciones disponibles ahora</span>
+        </div>
+        <!-- Badge flotante 2 -->
+        <div class="hero-float-badge hero-float-badge-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E85D27" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span>Gratis entre vecinos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ─────────────────────────────────────────────────────── -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+        </div>
+        <div class="stat-number" id="stat-total">—</div>
+        <div class="stat-label">Artículos publicados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="stat-number" id="stat-disponibles">—</div>
+        <div class="stat-label">Disponibles ahora</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11v12"/><path d="M9 17h8m3.5.5H21l-3.5-7H10"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+        </div>
+        <div class="stat-number" id="stat-entregadas">—</div>
+        <div class="stat-label">Donaciones entregadas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+        </div>
+        <div class="stat-number" id="stat-ciudades">—</div>
+        <div class="stat-label">Ciudades activas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Cómo funciona ─────────────────────────────────────────────── -->
+<section class="section" id="como-funciona">
+  <div class="container">
+    <div class="text-center mb-8">
+      <h2>¿Cómo funciona?</h2>
+      <p style="margin-top:12px;font-size:1.05rem;max-width:520px;margin-left:auto;margin-right:auto;">
+        En tres pasos simples conectamos lo que sobra con quien lo necesita.
+      </p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card" data-step="1">
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.7 4.5 7.7-4.5"/><path d="m7.5 4.27 9 5.15"/></svg>
+        </div>
+        <div class="step-number">1</div>
+        <h3 class="step-title">Publicá tu donación</h3>
+        <p class="step-desc">
+          Completá un formulario rápido con fotos y descripción del artículo que querés donar.
+          Es gratuito y tarda menos de 3 minutos.
+        </p>
+      </div>
+      <div class="step-card" data-step="2">
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <div class="step-number">2</div>
+        <h3 class="step-title">Alguien lo encuentra</h3>
+        <p class="step-desc">
+          Quienes buscan algo lo encuentran filtrando por categoría o ciudad.
+          Pueden ver la descripción completa y reservarlo con un clic.
+        </p>
+      </div>
+      <div class="step-card" data-step="3">
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="step-number">3</div>
+        <h3 class="step-title">Se coordinan y listo</h3>
+        <p class="step-desc">
+          Donante y receptor se contactan directamente para coordinar el retiro o entrega.
+          Simple, humano y sin intermediarios.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Split — Impacto con imagen ────────────────────────────────── -->
+<section class="split-section" style="background:var(--surface);">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=580&h=380&q=80"
+          alt="Personas de la comunidad recibiendo donaciones"
+          class="split-img"
+          loading="lazy"
+          onerror="this.parentElement.style.background='linear-gradient(135deg,#FFF0EA,#FFE0C8)';this.style.display='none';">
+      </div>
+      <div class="split-content">
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Nuestra propuesta de valor
+        </div>
+        <h2>Una plataforma construida para la comunidad</h2>
+        <p>
+          DonaCercano nació con una idea simple: lo que para alguien ya no tiene valor,
+          puede cambiar el día de otra persona. Conectamos vecinos de forma directa,
+          sin costos ni burocracia.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="feature-item-text"><strong>Completamente gratuito</strong> — publicar y recibir donaciones no tiene ningún costo.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="feature-item-text"><strong>Hiperlocal</strong> — filtrá por ciudad y barrio para encontrar donaciones cerca de vos.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="feature-item-text"><strong>Sin intermediarios</strong> — donante y receptor se comunican directamente.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="feature-item-text"><strong>Reduce el desperdicio</strong> — darle una segunda vida a los artículos cuida el medio ambiente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Valores ────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-8">
+      <h2>Por qué elegir DonaCercano</h2>
+      <p style="margin-top:10px;max-width:480px;margin-left:auto;margin-right:auto;">
+        Diseñada para que donar y recibir sea tan fácil como hablar con un vecino.
+      </p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon-wrap icon-box-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3 class="value-title">Seguro y confiable</h3>
+        <p class="value-desc">Cada publicación incluye nombre y contacto del donante. La comunidad se regula entre sí con transparencia.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon-wrap icon-box-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 class="value-title">Rápido y sin fricción</h3>
+        <p class="value-desc">Publicar una donación toma menos de 3 minutos. No hace falta registro, perfil ni contraseña para explorar.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon-wrap" style="background:#EDE9FE;color:#7C3AED;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </div>
+        <h3 class="value-title">Impacto real</h3>
+        <p class="value-desc">Cada artículo donado es un residuo menos y una familia beneficiada. La suma de pequeños gestos genera un cambio enorme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Categorías ────────────────────────────────────────────────── -->
+<section class="section-sm" style="background:var(--surface);">
+  <div class="container">
+    <div class="text-center mb-8">
+      <h2>¿Qué podés donar o recibir?</h2>
+      <p style="margin-top:10px;">Seleccioná una categoría para explorar lo disponible</p>
+    </div>
+    <div class="cat-grid">
+      <a href="buscar.html?categoria=ropa" class="cat-item">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+        </div>
+        <span class="cat-label">Ropa y calzado</span>
+      </a>
+      <a href="buscar.html?categoria=muebles" class="cat-item">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
+        </div>
+        <span class="cat-label">Muebles y hogar</span>
+      </a>
+      <a href="buscar.html?categoria=alimentos" class="cat-item">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="m6 2 3 6"/><path d="m18 2-3 6"/><path d="M8 12h.01"/><path d="M16 12h.01"/><path d="M2 9h20l-3 9H5L2 9z"/></svg>
+        </div>
+        <span class="cat-label">Alimentos</span>
+      </a>
+      <a href="buscar.html?categoria=libros" class="cat-item">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <span class="cat-label">Libros</span>
+      </a>
+      <a href="buscar.html?categoria=juguetes" class="cat-item">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        </div>
+        <span class="cat-label">Juguetes</span>
+      </a>
+      <a href="buscar.html?categoria=electronica" class="cat-item">
+        <div class="cat-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </div>
+        <span class="cat-label">Electrónica</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Donaciones recientes ──────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px;">
+      <div>
+        <h2>Donaciones recientes</h2>
+        <p style="margin-top:6px;">Los últimos artículos publicados en la plataforma</p>
+      </div>
+      <a href="buscar.html" class="btn btn-ghost">
+        Ver todas
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="cards-grid" id="recent-grid">
+      <div class="loading-center"><div class="spinner"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ────────────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>¿Tenés algo para donar?</h2>
+    <p>Publicá en minutos. Es gratis, es fácil y hace la diferencia en tu comunidad.</p>
+    <a href="donar.html" class="btn btn-white btn-lg">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Publicar una donación
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="10" fill="#E85D27"/>
+            <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+            <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Dona<span>Cercano</span>
+        </div>
+        <p>Lo que ya no usas, alguien más necesita. Una plataforma comunitaria gratuita para conectar donaciones con personas que las necesitan.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="buscar.html">Buscar donaciones</a></li>
+          <li><a href="donar.html">Publicar donación</a></li>
+          <li><a href="login.html">Mi cuenta</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Categorías</h5>
+        <ul>
+          <li><a href="buscar.html?categoria=ropa">Ropa y calzado</a></li>
+          <li><a href="buscar.html?categoria=muebles">Muebles y hogar</a></li>
+          <li><a href="buscar.html?categoria=alimentos">Alimentos</a></li>
+          <li><a href="buscar.html?categoria=electronica">Electrónica</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Información</h5>
+        <ul>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DonaCercano · Plataforma sin fines de lucro</span>
+      <span class="footer-made">
+        Hecho con
+        <svg viewBox="0 0 24 24" fill="#E85D27" stroke="#E85D27" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        para la comunidad
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Actualizar badge del hero con el conteo real
+  API.getStats().then(s => {
+    const el = document.getElementById('badge-disponibles-count');
+    if (el && s.disponibles) el.textContent = `${s.disponibles} donaciones disponibles`;
+  }).catch(() => {});
+</script>
+</body>
+</html>

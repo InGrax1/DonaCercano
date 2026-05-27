@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta — DonaCercano</title>
+  <meta name="description" content="Creá tu cuenta gratuita en DonaCercano para gestionar tus donaciones y ver tu historial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="auth-body">
+
+<!-- ── Navbar mínimo ─────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="10" fill="#E85D27"/>
+        <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+        <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Dona<span>Cercano</span>
+    </a>
+    <div id="nav-auth-desktop"></div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="buscar.html">Explorar donaciones</a>
+  <div id="nav-auth-mobile"></div>
+</div>
+
+<!-- ── Contenido ─────────────────────────────────────────────────── -->
+<main class="auth-page">
+  <div class="auth-card">
+
+    <!-- Encabezado -->
+    <div class="auth-header">
+      <div class="auth-logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+      </div>
+      <h1>Crear cuenta gratuita</h1>
+      <p>Publicá donaciones, seguí tu historial y gestioná todo desde tu perfil.</p>
+    </div>
+
+    <!-- Error general -->
+    <div id="form-error" class="form-alert form-alert-error" style="display:none;" role="alert" aria-live="polite">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span></span>
+    </div>
+
+    <form id="registro-form" novalidate>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-nombre">Nombre completo <span>*</span></label>
+        <input
+          class="form-input"
+          type="text"
+          id="reg-nombre"
+          name="nombre"
+          placeholder="¿Cómo te llamás?"
+          maxlength="80"
+          autocomplete="name"
+          required>
+        <span class="form-error" id="err-nombre"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-email">Correo electrónico <span>*</span></label>
+        <input
+          class="form-input"
+          type="email"
+          id="reg-email"
+          name="email"
+          placeholder="tu@correo.com"
+          maxlength="120"
+          autocomplete="email"
+          required>
+        <span class="form-error" id="err-email"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-password">Contraseña <span>*</span></label>
+        <div class="input-password-wrap">
+          <input
+            class="form-input"
+            type="password"
+            id="reg-password"
+            name="password"
+            placeholder="Mínimo 6 caracteres"
+            minlength="6"
+            autocomplete="new-password"
+            required>
+          <button type="button" class="input-toggle-pass" id="toggle-password" aria-label="Mostrar contraseña">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <div class="password-strength">
+          <div class="strength-track"><div class="strength-bar" id="strength-bar"></div></div>
+          <span class="strength-text" id="strength-text"></span>
+        </div>
+        <span class="form-error" id="err-password"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="reg-password2">Confirmá la contraseña <span>*</span></label>
+        <div class="input-password-wrap">
+          <input
+            class="form-input"
+            type="password"
+            id="reg-password2"
+            name="password2"
+            placeholder="Repetí tu contraseña"
+            autocomplete="new-password"
+            required>
+          <button type="button" class="input-toggle-pass" id="toggle-password2" aria-label="Mostrar contraseña">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+        <span class="form-error" id="err-password2"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg auth-submit-btn" id="reg-submit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+        <span id="reg-submit-text">Crear cuenta</span>
+      </button>
+
+    </form>
+
+    <div class="auth-footer-link">
+      ¿Ya tenés cuenta?
+      <a href="login.html">Ingresar</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/registro.js"></script>
+</body>
+</html>

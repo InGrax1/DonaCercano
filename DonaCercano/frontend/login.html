@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar — DonaCercano</title>
+  <meta name="description" content="Iniciá sesión en DonaCercano para gestionar tus donaciones.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="auth-body">
+
+<!-- ── Navbar mínimo ─────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="10" fill="#E85D27"/>
+        <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+        <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Dona<span>Cercano</span>
+    </a>
+    <div id="nav-auth-desktop"></div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="buscar.html">Explorar donaciones</a>
+  <div id="nav-auth-mobile"></div>
+</div>
+
+<!-- ── Contenido ─────────────────────────────────────────────────── -->
+<main class="auth-page">
+  <div class="auth-card">
+
+    <!-- Encabezado -->
+    <div class="auth-header">
+      <div class="auth-logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <h1>Bienvenido de vuelta</h1>
+      <p>Ingresá para gestionar tus donaciones y ver tu historial.</p>
+    </div>
+
+    <!-- Error general del formulario -->
+    <div id="form-error" class="form-alert form-alert-error" style="display:none;" role="alert" aria-live="polite">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span></span>
+    </div>
+
+    <form id="login-form" novalidate>
+
+      <div class="form-group">
+        <label class="form-label" for="login-email">Correo electrónico</label>
+        <input
+          class="form-input"
+          type="email"
+          id="login-email"
+          name="email"
+          placeholder="tu@correo.com"
+          autocomplete="email"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="login-password">Contraseña</label>
+        <div class="input-password-wrap">
+          <input
+            class="form-input"
+            type="password"
+            id="login-password"
+            name="password"
+            placeholder="Tu contraseña"
+            autocomplete="current-password"
+            required>
+          <button type="button" class="input-toggle-pass" id="toggle-password" aria-label="Mostrar contraseña">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg auth-submit-btn" id="login-submit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        <span id="login-submit-text">Ingresar</span>
+      </button>
+
+    </form>
+
+    <div class="auth-footer-link">
+      ¿No tenés cuenta?
+      <a href="registro.html">Registrate gratis</a>
+    </div>
+
+    <div class="auth-divider"><span>o</span></div>
+
+    <a href="buscar.html" class="btn btn-ghost auth-skip-btn">
+      Explorar sin cuenta
+    </a>
+
+  </div>
+</main>
+
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

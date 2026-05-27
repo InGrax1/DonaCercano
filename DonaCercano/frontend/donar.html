@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar donación — DonaCercano</title>
+  <meta name="description" content="Publicá gratis un artículo para donar a alguien que lo necesita en tu comunidad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="10" fill="#E85D27"/>
+        <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+        <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Dona<span>Cercano</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="buscar.html">Explorar donaciones</a></li>
+      <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+    </ul>
+    <a href="donar.html" class="btn btn-primary nav-cta desktop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Publicar donación
+    </a>
+    <div id="nav-auth-desktop"></div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="buscar.html">Explorar donaciones</a>
+  <a href="index.html#como-funciona">Cómo funciona</a>
+  <a href="donar.html" class="btn btn-primary">Publicar donación</a>
+  <div id="nav-auth-mobile"></div>
+</div>
+
+<!-- ── Formulario ────────────────────────────────────────────────── -->
+<main class="form-page">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:28px;">
+      <a href="index.html">Inicio</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      <span>Publicar donación</span>
+    </nav>
+
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Publicar una donación</h1>
+        <p>Completá los datos del artículo que querés donar. Es gratis y tarda menos de 3 minutos.</p>
+      </div>
+
+      <form id="donar-form" novalidate>
+
+        <!-- Categoría -->
+        <div class="form-group">
+          <label class="form-label">Categoría <span>*</span></label>
+          <div class="cat-selector">
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-ropa" value="ropa">
+              <label class="cat-option-label" for="cat-ropa" data-cat="ropa">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+                </div>
+                <span class="co-label">Ropa y calzado</span>
+              </label>
+            </div>
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-muebles" value="muebles">
+              <label class="cat-option-label" for="cat-muebles" data-cat="muebles">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 11v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H7V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
+                </div>
+                <span class="co-label">Muebles y hogar</span>
+              </label>
+            </div>
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-alimentos" value="alimentos">
+              <label class="cat-option-label" for="cat-alimentos" data-cat="alimentos">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="m6 2 3 6"/><path d="m18 2-3 6"/><path d="M8 12h.01"/><path d="M16 12h.01"/><path d="M2 9h20l-3 9H5L2 9z"/></svg>
+                </div>
+                <span class="co-label">Alimentos</span>
+              </label>
+            </div>
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-libros" value="libros">
+              <label class="cat-option-label" for="cat-libros" data-cat="libros">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <span class="co-label">Libros</span>
+              </label>
+            </div>
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-juguetes" value="juguetes">
+              <label class="cat-option-label" for="cat-juguetes" data-cat="juguetes">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                </div>
+                <span class="co-label">Juguetes</span>
+              </label>
+            </div>
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-electronica" value="electronica">
+              <label class="cat-option-label" for="cat-electronica" data-cat="electronica">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                </div>
+                <span class="co-label">Electrónica</span>
+              </label>
+            </div>
+
+            <div>
+              <input class="cat-option" type="radio" name="categoria" id="cat-otro" value="otro">
+              <label class="cat-option-label" for="cat-otro" data-cat="otro">
+                <div class="co-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><rect width="18" height="13" x="3" y="9" rx="1"/><path d="M12 9V3"/><path d="m9 3 3 6 3-6"/><path d="M3 13h18"/></svg>
+                </div>
+                <span class="co-label">Otro</span>
+              </label>
+            </div>
+
+          </div>
+          <span class="form-error" id="err-categoria">Seleccioná una categoría.</span>
+        </div>
+
+        <hr class="form-divider">
+
+        <div class="form-group">
+          <label class="form-label" for="titulo">Título del artículo <span>*</span></label>
+          <input class="form-input" type="text" id="titulo" name="titulo" placeholder="Ej: Ropa de niños tallas 4-8, sillón beige..." maxlength="100" autocomplete="off">
+          <span class="form-hint">Describí en pocas palabras qué estás donando (máx. 100 caracteres).</span>
+          <span class="form-error" id="err-titulo">Por favor ingresá un título.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="descripcion">Descripción <span>*</span></label>
+          <textarea class="form-textarea" id="descripcion" name="descripcion" placeholder="Describí el estado del artículo, cantidad, tallas, colores, si necesita retiro, etc." maxlength="600" rows="4"></textarea>
+          <span class="form-hint">Mientras más detalles, más fácil encontrará el artículo la persona indicada.</span>
+          <span class="form-error" id="err-descripcion">Por favor añadí una descripción.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ciudad">Ciudad <span>*</span></label>
+            <input class="form-input" type="text" id="ciudad" name="ciudad" placeholder="Ej: Buenos Aires, Córdoba..." maxlength="60" autocomplete="off">
+            <span class="form-error" id="err-ciudad">Ingresá la ciudad.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="zona">Barrio o zona</label>
+            <input class="form-input" type="text" id="zona" name="zona" placeholder="Ej: Palermo, Centro..." maxlength="60" autocomplete="off">
+          </div>
+        </div>
+
+        <hr class="form-divider">
+
+        <!-- Foto -->
+        <div class="form-group">
+          <label class="form-label">Foto del artículo</label>
+          <div class="upload-area" id="upload-area">
+            <input type="file" id="file-input" accept="image/jpeg,image/png,image/gif,image/webp" aria-label="Seleccionar imagen">
+            <div id="upload-placeholder">
+              <div class="upload-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </div>
+              <p class="upload-text">
+                <strong>Hacé clic o arrastrá una imagen</strong><br>
+                <span style="font-size:.8rem;color:var(--text-muted);">JPG, PNG, GIF o WEBP · máx. 5 MB</span>
+              </p>
+            </div>
+            <img id="upload-preview" class="upload-preview" style="display:none;" alt="Vista previa de la imagen">
+          </div>
+          <span class="form-hint">Una buena foto aumenta las chances de que tu donación sea reclamada.</span>
+        </div>
+
+        <hr class="form-divider">
+
+        <div class="form-group">
+          <label class="form-label" for="nombre_donante">Tu nombre <span>*</span></label>
+          <input class="form-input" type="text" id="nombre_donante" name="nombre_donante" placeholder="¿Cómo te llamás?" maxlength="80" autocomplete="name">
+          <span class="form-error" id="err-nombre">Ingresá tu nombre.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contacto">Contacto <span>*</span></label>
+          <input class="form-input" type="text" id="contacto" name="contacto" placeholder="Email o número de teléfono / WhatsApp" maxlength="120" autocomplete="email">
+          <span class="form-hint">Solo se mostrará cuando alguien reserve la donación.</span>
+          <span class="form-error" id="err-contacto">Ingresá un método de contacto.</span>
+        </div>
+
+        <div class="form-actions">
+          <a href="buscar.html" class="btn btn-ghost">Cancelar</a>
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            <span id="submit-text">Publicar donación</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding-top:0;">
+      <span>© 2026 DonaCercano · Plataforma gratuita y sin fines de lucro</span>
+      <a href="index.html">Volver al inicio</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/donar.js"></script>
+</body>
+</html>
