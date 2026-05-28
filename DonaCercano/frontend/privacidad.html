@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de privacidad — DonaCercano</title>
+  <meta name="description" content="Cómo DonaCercano recopila, usa y protege tu información personal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .legal-page { padding: 64px 0 96px; }
+    .legal-container { max-width: 760px; margin: 0 auto; }
+    .legal-meta { font-size: .825rem; color: var(--text-muted); margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border-light); }
+    .legal-section { margin-bottom: 40px; }
+    .legal-section h2 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border-light); }
+    .legal-section p  { font-size: .9rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 12px; }
+    .legal-section ul { margin: 10px 0 12px 20px; }
+    .legal-section ul li { font-size: .9rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 6px; }
+    .legal-highlight { background: var(--secondary-bg); border-left: 4px solid var(--secondary); border-radius: 0 var(--r-md) var(--r-md) 0; padding: 14px 18px; margin: 16px 0; font-size: .875rem; color: var(--text-secondary); line-height: 1.7; }
+    .legal-nav { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--r-xl); padding: 24px; margin-bottom: 40px; }
+    .legal-nav h3 { font-size: .875rem; font-weight: 700; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+    .legal-nav ol { margin-left: 18px; }
+    .legal-nav ol li { font-size: .875rem; margin-bottom: 6px; }
+    .legal-nav ol li a { color: var(--primary); font-weight: 500; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 16px 0; }
+    .data-table th { background: var(--surface-hover); padding: 10px 14px; text-align: left; font-weight: 700; color: var(--text); border: 1px solid var(--border-light); }
+    .data-table td { padding: 10px 14px; color: var(--text-secondary); border: 1px solid var(--border-light); vertical-align: top; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ───────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="10" fill="#E85D27"/>
+        <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+        <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Dona<span>Cercano</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="buscar.html">Explorar donaciones</a></li>
+      <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+    </ul>
+    <a href="donar.html" class="btn btn-primary nav-cta desktop">+ Publicar donación</a>
+    <div id="nav-auth-desktop"></div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="buscar.html">Explorar donaciones</a>
+  <a href="index.html#como-funciona">Cómo funciona</a>
+  <a href="donar.html" class="btn btn-primary">+ Publicar donación</a>
+  <div id="nav-auth-mobile"></div>
+</div>
+
+<!-- ── Page header ───────────────────────────────────────────────── -->
+<div class="page-header">
+  <div class="container">
+    <h1>Política de privacidad</h1>
+    <p>Cómo recopilamos, usamos y protegemos tu información en DonaCercano.</p>
+  </div>
+</div>
+
+<!-- ── Contenido ─────────────────────────────────────────────────── -->
+<section class="legal-page">
+  <div class="container">
+    <div class="legal-container">
+
+      <p class="legal-meta">Última actualización: mayo de 2026 · Esta política aplica a todos los usuarios de DonaCercano</p>
+
+      <div class="legal-highlight">
+        <strong>Resumen rápido:</strong> Recopilamos solo los datos necesarios para que la plataforma funcione. No vendemos ni compartimos tu información con terceros con fines comerciales. Podés eliminar tu cuenta en cualquier momento.
+      </div>
+
+      <!-- Índice -->
+      <div class="legal-nav">
+        <h3>Contenido</h3>
+        <ol>
+          <li><a href="#datos-recopilados">Qué datos recopilamos</a></li>
+          <li><a href="#uso-datos">Cómo usamos tus datos</a></li>
+          <li><a href="#datos-publicos">Datos visibles públicamente</a></li>
+          <li><a href="#almacenamiento">Almacenamiento y seguridad</a></li>
+          <li><a href="#derechos">Tus derechos</a></li>
+          <li><a href="#cookies">Cookies y almacenamiento local</a></li>
+          <li><a href="#menores">Menores de edad</a></li>
+          <li><a href="#cambios">Cambios en esta política</a></li>
+          <li><a href="#contacto-priv">Contacto</a></li>
+        </ol>
+      </div>
+
+      <div class="legal-section" id="datos-recopilados">
+        <h2>1. Qué datos recopilamos</h2>
+        <p>Recopilamos únicamente los datos que vos proporcionás voluntariamente al usar la plataforma:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Dato</th>
+              <th>Cuándo se recopila</th>
+              <th>Finalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nombre completo</td>
+              <td>Registro de cuenta o publicación de donación</td>
+              <td>Identificarte como donante en la plataforma</td>
+            </tr>
+            <tr>
+              <td>Correo electrónico</td>
+              <td>Registro de cuenta</td>
+              <td>Inicio de sesión y contacto</td>
+            </tr>
+            <tr>
+              <td>Contraseña</td>
+              <td>Registro de cuenta</td>
+              <td>Autenticación. Se almacena cifrada (nunca en texto plano)</td>
+            </tr>
+            <tr>
+              <td>Datos de contacto</td>
+              <td>Publicación de donación</td>
+              <td>Que los receptores puedan comunicarse con vos</td>
+            </tr>
+            <tr>
+              <td>Ciudad / barrio</td>
+              <td>Publicación de donación</td>
+              <td>Filtrado geográfico de donaciones</td>
+            </tr>
+            <tr>
+              <td>Imágenes</td>
+              <td>Publicación de donación (opcional)</td>
+              <td>Mostrar el artículo a la comunidad</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>No recopilamos datos de geolocalización, cookies de seguimiento, ni información financiera.</p>
+      </div>
+
+      <div class="legal-section" id="uso-datos">
+        <h2>2. Cómo usamos tus datos</h2>
+        <p>Usamos tu información exclusivamente para:</p>
+        <ul>
+          <li>Mostrar tus publicaciones en el catálogo de donaciones.</li>
+          <li>Permitirte iniciar sesión y gestionar tu cuenta.</li>
+          <li>Facilitar el contacto entre donantes y receptores.</li>
+          <li>Generar estadísticas agregadas y anónimas sobre el uso de la plataforma (por ejemplo, "X donaciones en Buenos Aires").</li>
+        </ul>
+        <p><strong>No</strong> usamos tus datos para publicidad, perfiles de comportamiento, ni los compartimos con terceros con fines comerciales.</p>
+      </div>
+
+      <div class="legal-section" id="datos-publicos">
+        <h2>3. Datos visibles públicamente</h2>
+        <p>Al publicar una donación, la siguiente información será visible para todos los visitantes de la plataforma:</p>
+        <ul>
+          <li>Título y descripción del artículo.</li>
+          <li>Categoría, ciudad y barrio.</li>
+          <li>Nombre del donante (el que ingresaste en el formulario).</li>
+          <li>Foto del artículo (si la subiste).</li>
+          <li>Estado de la donación (disponible, reservado).</li>
+        </ul>
+        <p>El dato de <strong>contacto</strong> (email o teléfono) solo se muestra cuando el visitante hace clic en "Ver datos de contacto" dentro de la página de detalle.</p>
+      </div>
+
+      <div class="legal-section" id="almacenamiento">
+        <h2>4. Almacenamiento y seguridad</h2>
+        <p>Los datos se almacenan en un servidor local. Las contraseñas se procesan con un algoritmo de hash seguro (PBKDF2 con salt único por usuario) y nunca se guardan en texto plano.</p>
+        <p>Tomamos medidas razonables para proteger tu información, aunque ningún sistema es 100% infalible. Te recomendamos usar una contraseña única para DonaCercano.</p>
+      </div>
+
+      <div class="legal-section" id="derechos">
+        <h2>5. Tus derechos</h2>
+        <p>Tenés derecho a:</p>
+        <ul>
+          <li><strong>Acceder</strong> a los datos que tenemos sobre vos (visible en tu perfil).</li>
+          <li><strong>Rectificar</strong> información incorrecta (contactando a los administradores).</li>
+          <li><strong>Eliminar</strong> tu cuenta y tus publicaciones en cualquier momento.</li>
+          <li><strong>Portabilidad:</strong> solicitar una copia de tus datos en formato legible.</li>
+        </ul>
+        <p>Para ejercer cualquiera de estos derechos, contactanos a través de la plataforma.</p>
+      </div>
+
+      <div class="legal-section" id="cookies">
+        <h2>6. Cookies y almacenamiento local</h2>
+        <p>DonaCercano no utiliza cookies de seguimiento ni publicidad.</p>
+        <p>Usamos el <strong>almacenamiento local del navegador</strong> (localStorage) únicamente para mantener tu sesión iniciada entre visitas. Este dato es local a tu dispositivo y no se transmite a ningún servidor salvo como token de autenticación para verificar tu identidad.</p>
+        <p>Podés cerrar sesión en cualquier momento para limpiar estos datos.</p>
+      </div>
+
+      <div class="legal-section" id="menores">
+        <h2>7. Menores de edad</h2>
+        <p>DonaCercano no está dirigida a menores de 13 años. Si creés que un menor ha registrado una cuenta sin supervisión adulta, contactanos para eliminarla.</p>
+      </div>
+
+      <div class="legal-section" id="cambios">
+        <h2>8. Cambios en esta política</h2>
+        <p>Podemos actualizar esta Política de Privacidad cuando sea necesario. Los cambios se publicarán en esta página con la fecha de actualización. Te recomendamos revisarla periódicamente.</p>
+      </div>
+
+      <div class="legal-section" id="contacto-priv">
+        <h2>9. Contacto</h2>
+        <p>Para consultas relacionadas con tu privacidad o el tratamiento de tus datos, podés comunicarte con nosotros a través de la plataforma. También podés consultar nuestra sección de <a href="faq.html" style="color:var(--primary);font-weight:600;">Preguntas frecuentes</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="10" fill="#E85D27"/>
+            <path d="M8 10h16l-2 10H10L8 10z" fill="white" fill-opacity=".25"/>
+            <path d="M8 10h16l-2 10H10L8 10z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 10V8a4 4 0 018 0v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M13 15c0 1.66 1.34 3 3 3s3-1.34 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Dona<span>Cercano</span>
+        </div>
+        <p>Lo que ya no usas, alguien más lo puede aprovechar. Una plataforma comunitaria gratuita para conectar donaciones con personas que las necesitan.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegar</h5>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="buscar.html">Buscar donaciones</a></li>
+          <li><a href="donar.html">Publicar donación</a></li>
+          <li><a href="perfil.html">Mi cuenta</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Categorías</h5>
+        <ul>
+          <li><a href="buscar.html?categoria=ropa">Ropa y calzado</a></li>
+          <li><a href="buscar.html?categoria=muebles">Muebles y hogar</a></li>
+          <li><a href="buscar.html?categoria=alimentos">Alimentos</a></li>
+          <li><a href="buscar.html?categoria=electronica">Electrónica</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Información</h5>
+        <ul>
+          <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+          <li><a href="faq.html">Preguntas frecuentes</a></li>
+          <li><a href="terminos.html">Términos de uso</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DonaCercano · Plataforma sin fines de lucro</span>
+      <span class="footer-made">
+        Hecho con
+        <svg viewBox="0 0 24 24" fill="#E85D27" stroke="#E85D27" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        para la comunidad
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>
